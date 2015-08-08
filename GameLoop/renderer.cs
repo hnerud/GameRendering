@@ -39,6 +39,14 @@ namespace GameLoop
             }
             Gl.glEnd();
         }
+        public void DrawText(Text text)
+        {
+            foreach (CharacterSprite c in text.CharacterSprites)
+            {
+                DrawSprite(c.Sprite);
+            }
+        }
+        
     }
 
 
