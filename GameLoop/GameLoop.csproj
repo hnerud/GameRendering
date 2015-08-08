@@ -72,6 +72,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FramesPerSecond.cs" />
     <Compile Include="FramesTestState.cs" />
     <Compile Include="IGameObject.cs" />
     <Compile Include="Point.cs" />

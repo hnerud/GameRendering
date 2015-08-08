@@ -23,8 +23,7 @@ namespace GameLoop
             sprite.Texture = _texture;
             Point topLeft = new Point((float)charData.X / (float)_texture.Width,
                 (float)charData.Y / (float)_texture.Height);
-            Point bottomRight = new Point(topLeft.X + ((float)charData.Height /
-                (float)_texture.Width),
+            Point bottomRight = new Point(topLeft.X + ((float)charData.Width / (float)_texture.Width),
                 topLeft.Y + ((float)charData.Height / (float)_texture.Height));
 
             sprite.SetUVs(topLeft, bottomRight);
