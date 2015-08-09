@@ -50,9 +50,10 @@ namespace GameLoop
            
             _system.AddState("text_state", new TextTestState(_textureManager));
             _system.AddState("frame_state", new FramesTestState(_textureManager));
+            _system.AddState("wrap_state", new TextWrapTest(_textureManager));
 
             //start state
-            _system.ChangeState("frame_state");
+            _system.ChangeState("wrap_state");
         }
 
       

@@ -87,6 +87,7 @@
     <Compile Include="TextTestState.cs" />
     <Compile Include="Texture.cs" />
     <Compile Include="TextureManager.cs" />
+    <Compile Include="TextWrapTest.cs" />
     <Compile Include="Vector.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

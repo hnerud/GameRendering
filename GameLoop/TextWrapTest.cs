@@ -7,41 +7,34 @@ using Tao.OpenGl;
 
 namespace GameLoop
 {
-    class FramesTestState : IGameObject
+    class TextWrapTest : IGameObject
     {
         TextureManager _textureManager;
         Font _font;
-        Text _fpsText;
+        Text _longText;
         Renderer _renderer = new Renderer();
-        FramesPerSecond _fps = new FramesPerSecond();
 
-
-        public FramesTestState(TextureManager textureManager)
+        public TextWrapTest(TextureManager textureManager)
         {
             _textureManager = textureManager;
             _font = new Font(textureManager.Get("font"),
                 FontParser.Parse("font.fnt"));
-            _fpsText = new Text("FPS: ", _font);
+            
+            _longText = new Text("The quick brown fox jumps over the lazy dog",
+           _font, 400);
+
+
         }
-        #region IGameObject Members
+
         public void Render()
         {
             Gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT);
-            _fpsText = new Text("FPS: " + _fps.CurrentFPS.ToString("00.0"), _font);
-            _renderer.DrawText(_fpsText); 
-            //for (int i = 0; i<1000; i++)
-            //{
-            //    _renderer.DrawText(_fpsText);
-            //}
+            _renderer.DrawText(_longText);
         }
 
         public void Update(double elapsedTime)
         {
-            _fps.Process(elapsedTime);
-
         }
-
-        #endregion
     }
 }
