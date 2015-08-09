@@ -31,6 +31,7 @@ namespace GameLoop
             Gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT);
             _renderer.DrawText(_longText);
+            _renderer.Render();
         }
 
         public void Update(double elapsedTime)

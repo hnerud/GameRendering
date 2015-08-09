@@ -53,7 +53,7 @@ namespace GameLoop
             _system.AddState("wrap_state", new TextWrapTest(_textureManager));
 
             //start state
-            _system.ChangeState("wrap_state");
+            _system.ChangeState("frame_state");
         }
 
       

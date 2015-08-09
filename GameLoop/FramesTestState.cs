@@ -29,11 +29,12 @@ namespace GameLoop
             Gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT);
             _fpsText = new Text("FPS: " + _fps.CurrentFPS.ToString("00.0"), _font);
-            _renderer.DrawText(_fpsText); 
-            //for (int i = 0; i<1000; i++)
-            //{
-            //    _renderer.DrawText(_fpsText);
-            //}
+            _renderer.DrawText(_fpsText);
+            _renderer.Render();
+            for (int i = 0; i<1000; i++)
+           {
+              _renderer.DrawText(_fpsText);
+            }
         }
 
         public void Update(double elapsedTime)

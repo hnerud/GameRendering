@@ -26,6 +26,7 @@ namespace GameLoop
             Gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT);
             _renderer.DrawSprite(_text);
+            _renderer.Render();
         }
 
             void IGameObject.Update(double elapsedTime)
