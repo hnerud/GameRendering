@@ -60,6 +60,11 @@ namespace GameLoop
                 _vertexPositions[0].Z);
         }
 
+        public Vector GetPosition()
+        {
+            return GetCenter();
+        }
+
        public void InitVertexPositions(Vector position, double width, double height)
         {
             double halfWidth = width / 2;

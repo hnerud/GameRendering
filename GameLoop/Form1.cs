@@ -51,9 +51,13 @@ namespace GameLoop
             _system.AddState("text_state", new TextTestState(_textureManager));
             _system.AddState("frame_state", new FramesTestState(_textureManager));
             _system.AddState("wrap_state", new TextWrapTest(_textureManager));
+            _system.AddState("trig_draw", new WaveformGraphics());
+            _system.AddState("special_effect", new SpecialEffectState(_textureManager));
+            _system.AddState("circle_state", new CircleIntersectionState());
+
 
             //start state
-            _system.ChangeState("frame_state");
+            _system.ChangeState("circle_state");
         }
 
       
