@@ -12,7 +12,13 @@ namespace GameLoop
         Vector Position { get; set; }
         double Radius { get; set; }
         Color _color = new Color(1, 1, 1, 1);
-        
+        public Color Color
+        {
+            get { return _color; }
+            set { _color = value; }
+        }
+
+
         public Circle()
         {
             Position = Vector.Zero;
@@ -44,6 +50,21 @@ namespace GameLoop
                 }
             }
             Gl.glEnd();
+        }
+
+        public bool Intersects(Point point)
+        {
+            // Change point to a vector
+            Vector vPoint = new Vector(point.X, point.Y, 0);
+            Vector vFromCircleToPoint = Position - vPoint;
+            double distance = vFromCircleToPoint.Length();
+
+            if (distance > Radius)
+            {
+                return false;
+            }
+            return true;
+
         }
     }
 

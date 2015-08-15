@@ -17,6 +17,7 @@ namespace GameLoop
     {
         FastLoop _fastLoop;
         StateSystem _system = new StateSystem();
+        Input _input = new Input();
 
         bool _fullscreen = false;
         TextureManager _textureManager = new TextureManager();
@@ -53,7 +54,7 @@ namespace GameLoop
             _system.AddState("wrap_state", new TextWrapTest(_textureManager));
             _system.AddState("trig_draw", new WaveformGraphics());
             _system.AddState("special_effect", new SpecialEffectState(_textureManager));
-            _system.AddState("circle_state", new CircleIntersectionState());
+            _system.AddState("circle_state", new CircleIntersectionState(_input));
 
 
             //start state
@@ -67,6 +68,7 @@ namespace GameLoop
             _system.Update(elapsedTime);
             _system.Render();
             _openGLControl.Refresh();
+            UpdateInput();
 
         }
         protected override void OnClientSizeChanged(EventArgs e)
@@ -88,6 +90,18 @@ namespace GameLoop
             Gl.glMatrixMode(Gl.GL_MODELVIEW);
             Gl.glLoadIdentity();
         }
+        private void UpdateInput()
+        {
+            System.Drawing.Point mousePos = Cursor.Position;
+            mousePos = _openGLControl.PointToClient(mousePos);
+
+            // Now use our point definition, 
+            Point adjustedMousePoint = new Point();
+            adjustedMousePoint.X = (float)mousePos.X - ((float)ClientSize.Width / 2);
+            adjustedMousePoint.Y = ((float)ClientSize.Height / 2) - (float)mousePos.Y;
+            _input.MousePosition = adjustedMousePoint;
+        }
+
 
     }
 }

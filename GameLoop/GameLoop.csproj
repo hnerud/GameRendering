@@ -78,6 +78,7 @@
     <Compile Include="FramesPerSecond.cs" />
     <Compile Include="FramesTestState.cs" />
     <Compile Include="IGameObject.cs" />
+    <Compile Include="Input.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="PreciseTimer.cs" />
     <Compile Include="Program.cs" />
