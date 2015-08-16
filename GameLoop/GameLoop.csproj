@@ -79,10 +79,14 @@
     <Compile Include="FramesTestState.cs" />
     <Compile Include="IGameObject.cs" />
     <Compile Include="Input.cs" />
+    <Compile Include="Matrix.cs" />
+    <Compile Include="MatrixTestState.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="PreciseTimer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rectangle.cs" />
+    <Compile Include="RectangleIntersectionState.cs" />
     <Compile Include="renderer.cs" />
     <Compile Include="SpecialEffectState.cs" />
     <Compile Include="sprite.cs" />
@@ -93,6 +97,8 @@
     <Compile Include="Texture.cs" />
     <Compile Include="TextureManager.cs" />
     <Compile Include="TextWrapTest.cs" />
+    <Compile Include="Tween.cs" />
+    <Compile Include="TweenTestState.cs" />
     <Compile Include="Vector.cs" />
     <Compile Include="WaveformGraphics.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -121,6 +127,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="face.tif" />
+    <Content Include="face_alpha.tif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -38,7 +38,8 @@ namespace GameLoop
             //Load textures
 
             _textureManager.LoadTexture("font", "font.tga");
-            
+            _textureManager.LoadTexture("face", "face_alpha.tif");
+
 
             if (_fullscreen)
             {
@@ -55,10 +56,13 @@ namespace GameLoop
             _system.AddState("trig_draw", new WaveformGraphics());
             _system.AddState("special_effect", new SpecialEffectState(_textureManager));
             _system.AddState("circle_state", new CircleIntersectionState(_input));
+            _system.AddState("rectangle_state", new RectangleIntersectionState(_input));
+            _system.AddState("tween_state", new TweenTestState(_textureManager));
+            _system.AddState("matrix_state", new MatrixTestState(_textureManager));
 
 
             //start state
-            _system.ChangeState("circle_state");
+            _system.ChangeState("tween_state");
         }
 
       

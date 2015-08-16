@@ -14,6 +14,15 @@ namespace GameLoop
         Point[] _vertexUVs = new Point[VertexAmount];
         Texture _texture = new Texture();
 
+        double _scaleX = 1;
+        double _scaleY = 1;
+        double _rotation = 0;
+        double _positionX = 0;
+        double _positionY = 0;
+        
+
+
+
         public sprite()
         {
             InitVertexPositions(new Vector(0, 0, 0), 1, 1);
@@ -109,9 +118,24 @@ namespace GameLoop
             SetPosition(new Vector(x, y, 0));
         }
 
+        private void ApplyMatrix(Matrix m)
+        {
+            for (int i = 0; i < VertexPositions.Length; i++)
+            {
+                VertexPositions[i] *= m;
+            }
+        }
+
         public void SetPosition(Vector position)
         {
-            InitVertexPositions(position, GetWidth(), GetHeight());
+           // InitVertexPositions(position, GetWidth(), GetHeight());
+            Matrix m = new Matrix();
+            m.SetTranslation(new Vector(_positionX, _positionY, 0));
+            ApplyMatrix(m.Inverse());
+            m.SetTranslation(position);
+            ApplyMatrix(m);
+            _positionX = position.X;
+            _positionY = position.Y;
         }
 
         public void SetColor(Color color)
@@ -135,6 +159,40 @@ namespace GameLoop
             _vertexUVs[5] = new Point(topLeft.X, bottomRight.Y);
 
         }
+
+        public void SetScale(double x, double y)
+        {
+            double oldX = _positionX;
+            double oldY = _positionY;
+            SetPosition(0, 0);
+            Matrix mScale = new Matrix();
+            mScale.SetScale(new Vector(_scaleX, _scaleY, 1));
+            mScale = mScale.Inverse();
+            ApplyMatrix(mScale);
+            mScale = new Matrix();
+            mScale.SetScale(new Vector(x, y, 1));
+            ApplyMatrix(mScale);
+            SetPosition(oldX, oldY);
+            _scaleX = x;
+            _scaleY = y;
+        }
+
+        public void SetRotation(double rotation)
+        {
+            double oldX = _positionX;
+            double oldY = _positionY;
+            SetPosition(0, 0);
+            Matrix mRot = new Matrix();
+            mRot.SetRotate(new Vector(0, 0, 1), _rotation);
+            ApplyMatrix(mRot.Inverse());
+            mRot = new Matrix();
+            mRot.SetRotate(new Vector(0, 0, 1), rotation);
+            ApplyMatrix(mRot);
+            SetPosition(oldX, oldY);
+            _rotation = rotation;
+        }
+
+       
 
     }
 }
