@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineTest", "EngineTest\EngineTest.csproj", "{8BB5E479-6EDC-4990-AFC5-AF0EF3167A18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "..\..\..\..\..\Documents\GitHub\Hello\Engine\Engine\Engine.csproj", "{54F7F956-372A-4B75-909F-A464C8DA356D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BB5E479-6EDC-4990-AFC5-AF0EF3167A18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB5E479-6EDC-4990-AFC5-AF0EF3167A18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB5E479-6EDC-4990-AFC5-AF0EF3167A18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB5E479-6EDC-4990-AFC5-AF0EF3167A18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54F7F956-372A-4B75-909F-A464C8DA356D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54F7F956-372A-4B75-909F-A464C8DA356D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54F7F956-372A-4B75-909F-A464C8DA356D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54F7F956-372A-4B75-909F-A464C8DA356D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
